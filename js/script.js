@@ -111,4 +111,14 @@ window.addEventListener('DOMContentLoaded', function(){
         document.body.style.overflow = '';
     });
 
+    let tabsMore = document.querySelectorAll('.description-btn');
+
+    for (let i = 0; i < tabsMore.length; i++) {
+        tabsMore[i].addEventListener('click', function() {
+            overlay.style.display = 'block';
+            this.classList.add('more-splash');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
 });
