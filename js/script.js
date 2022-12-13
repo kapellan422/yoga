@@ -121,4 +121,17 @@ window.addEventListener('DOMContentLoaded', function(){
         });
     }
 
+    
+    //Class Options
+
+    class Options {
+        constructor(height, width, bg, fontSize, textAlign) {
+            this.height = height;
+            this.width = width;
+            this.bg = bg;
+            this.fontSize = fontSize;
+            this.textAlign = textAlign;
+        }
+
+    }
 });
