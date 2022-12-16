@@ -150,8 +150,16 @@ window.addEventListener('DOMContentLoaded', function(){
             request.addEventListener('readystatechange', () => {
                 if (request.readyState < 4) {
                     statusMessage.innerHTML = message.loading;
+                } else if(request.readyState === 4 && request.status == 200) {
+                    statusMessage.innerHTML = message.succsess;
+                } else {
+                    statusMessage.innerHTML = message.failure;
                 }
             });
+
+            for(let i = 0; i < input.length; i++){
+                input[i].value = '';
+            }
         });
     
     //Class Options
