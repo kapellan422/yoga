@@ -145,7 +145,20 @@ window.addEventListener('DOMContentLoaded', function(){
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             let formData = new FormData(form);
+
+            //Variables FormData or JSON
+            //  FormData
             request.send(formData);
+
+            //  JSON
+            // let obj = {};
+            // formData.forEach(function(value, key){
+            //     obj[key] = value;
+            // });
+            // let json = JSON.stringify(obj);
+
+            // request.send(json);
+
 
             request.addEventListener('readystatechange', () => {
                 if (request.readyState < 4) {
