@@ -198,6 +198,50 @@ window.addEventListener('DOMContentLoaded', function(){
     // const item = new Options(50, 100, red, 12, center);
     // item.createDiv();
 
+
+    // Slider
+
+    let slideIndex = 1,
+        slides = this.document.querySelectorAll('.slider-item'),
+        prev = this.document.querySelector('.prev'),
+        next = this.document.querySelector('.next'),
+        dotsWrap = this.document.querySelector('.slider-dots'),
+        dots = this.document.querySelectorAll('.dot');
+    
+    showSlides(slideIndex);
+
+    function showSlides(n) {
+        
+        if(n > slides.length) {
+            slideIndex = 1;
+        }
+        if(n < 1) {
+            slideIndex = slides.length;
+        }
+
+        slides.forEach((item) => item.style.display = 'none');
+        dots.forEach((item) => item.classList.remove('dot-active'));
+
+        slides[slideIndex - 1].style.display = 'block';
+        dots[slideIndex - 1].classList.add('dot-active');
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    prev.addEventListener('click', function() {
+        plusSlides(-1);
+    });
+
+    next.addEventListener('click', function() {
+        plusSlides(1);
+    });
+
     // Calc
 
     let persons = document.querySelectorAll('.counter-block-input')[0],
